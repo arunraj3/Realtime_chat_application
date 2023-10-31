@@ -17,8 +17,8 @@ import org.springframework.stereotype.Controller;
 public class ChatController {
 
     // message mapping tells for which URL should i invoke this method
-    @MessageMapping("./chat.sendMessage")
-    @SendTo("./topic/public")
+    @MessageMapping("/chat.sendMessage")
+    @SendTo("/topic/public")
     public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {
 
         /* We need to create Payload */
@@ -30,8 +30,8 @@ public class ChatController {
         return chatMessage;
     }
 
-    @MessageMapping("./chat.addUser")
-    @SendTo("./topic/public")
+    @MessageMapping("/chat.addUser")
+    @SendTo("/topic/public")
     public ChatMessage addUser(@Payload ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
         // Add username in websocket session
         headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
