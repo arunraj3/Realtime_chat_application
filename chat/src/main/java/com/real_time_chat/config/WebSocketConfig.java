@@ -1,4 +1,4 @@
-package com.config;
+package com.real_time_chat.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
