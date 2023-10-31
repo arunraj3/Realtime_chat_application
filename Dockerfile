@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-# COPY --from=build chat-0.0.1-SHAPSHOT.jar chat.jar
+COPY --from=build /target/chat-0.0.1-SHAPSHOT.jar chat.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","chat-0.0.1-SHAPSHOT.jar"]
