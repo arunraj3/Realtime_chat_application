@@ -1,4 +1,4 @@
-package com.real_time_chat.chat;
+package com.websocket_chat.chat.chat;
 
 public enum MessageType {
     CHAT,

@@ -1,4 +1,4 @@
-package com.real_time_chat.chat;
+package com.websocket_chat.chat.chat;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class ChatController {
 
-    //message mapping tells for which URL should i invoke this method
+    // message mapping tells for which URL should i invoke this method
     @MessageMapping("./chat.sendMessage")
     @SendTo("./topic/public")
     public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {
@@ -32,8 +32,8 @@ public class ChatController {
 
     @MessageMapping("./chat.addUser")
     @SendTo("./topic/public")
-    public ChatMessage addUser(@Payload ChatMessage chatMessage,SimpMessageHeaderAccessor headerAccessor){
-        //Add username in websocket session 
+    public ChatMessage addUser(@Payload ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
+        // Add username in websocket session
         headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
         return chatMessage;
     }

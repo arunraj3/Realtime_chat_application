@@ -1,4 +1,4 @@
-package com.real_time_chat.config;
+package com.websocket_chat.chat.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

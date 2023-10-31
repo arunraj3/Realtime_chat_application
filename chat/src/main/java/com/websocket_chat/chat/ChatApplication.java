@@ -1,4 +1,4 @@
-package com.real_time_chat;
+package com.websocket_chat.chat;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
